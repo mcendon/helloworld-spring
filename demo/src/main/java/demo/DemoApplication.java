@@ -9,7 +9,10 @@ public class DemoApplication {
 
     public static void main(String[] args) {
         ApplicationContext ctx = SpringApplication.run(DemoApplication.class, args);
-        HelloWorld helloWorld = (HelloWorld) ctx.getBean("helloWorld");
-        helloWorld.sayHello();
+        ConstructorBasedHelloWorld constructorBasedHelloWorld = (ConstructorBasedHelloWorld) ctx.getBean("constructorBasedHelloWorld");
+        constructorBasedHelloWorld.printMessage();
+
+        SetterBasedHelloWorld setterBasedHelloWorld = (SetterBasedHelloWorld) ctx.getBean("setterBasedHelloWorld");
+        setterBasedHelloWorld.printMessage();
     }
 }
